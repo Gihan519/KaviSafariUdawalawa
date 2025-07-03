@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavi Safari Udawalawa - Wildlife Adventure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #059669 50%, #d97706 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #059669, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .scale-on-hover {
+            transition: transform 0.3s ease;
+        }
+        
+        .scale-on-hover:hover {
+            transform: scale(1.05);
+        }
+        
+        .glow-on-hover {
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .glow-on-hover:hover {
+            box-shadow: 0 0 30px rgba(5, 150, 105, 0.4);
+        }
+        
+        .elephant-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .nature-gradient {
+            background: linear-gradient(45deg, #10b981, #059669, #047857);
+        }
+        
+        .sunset-gradient {
+            background: linear-gradient(45deg, #f59e0b, #d97706, #92400e);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold gradient-text">KAVI SAFARI</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-green-400 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-green-400 transition-colors">About</a>
+                    <a href="#packages" class="hover:text-green-400 transition-colors">Packages</a>
+                    <a href="#contact" class="hover:text-green-400 transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen relative overflow-hidden elephant-pattern">
+        <div class="gradient-bg absolute inset-0 opacity-90"></div>
+        <div class="relative z-10 container mx-auto px-6 py-20 pt-32">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 slide-in">
+                    <span class="gradient-text">Wildlife</span><br>
+                    <span class="text-white">Adventure</span><br>
+                    <span class="text-orange-400">Awaits</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 slide-in opacity-90 max-w-3xl mx-auto">
+                    Experience the magic of Sri Lanka's wilderness with expert guides at Udawalawe National Park
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center slide-in">
+                    <button class="bg-green-600 hover:bg-green-700 px-8 py-4 rounded-full text-lg font-semibold transition-all scale-on-hover glow-on-hover">
+                        Book Your Safari
+                    </button>
+                    <button class="border-2 border-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-full text-lg font-semibold transition-all scale-on-hover">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-16 h-16 bg-green-500 rounded-full opacity-20 floating-animation"></div>
+        <div class="absolute bottom-20 right-10 w-24 h-24 bg-orange-500 rounded-full opacity-20 floating-animation" style="animation-delay: -2s;"></div>
+        <div class="absolute top-1/2 left-1/4 w-8 h-8 bg-blue-500 rounded-full opacity-30 floating-animation" style="animation-delay: -4s;"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">About Kavi Safari</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Your gateway to Sri Lanka's wildlife wonderland, offering authentic experiences with expert local guides
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="glass-effect p-6 rounded-2xl scale-on-hover">
+                        <h3 class="text-2xl font-bold text-green-400 mb-3">🐘 Expert Wildlife Guides</h3>
+                        <p class="text-gray-300">Born and raised locally, our guides possess intimate knowledge of Udawalawe's terrain and wildlife behavior patterns.</p>
+                    </div>
+                    
+                    <div class="glass-effect p-6 rounded-2xl scale-on-hover">
+                        <h3 class="text-2xl font-bold text-orange-400 mb-3">🌿 Eco-Friendly Tourism</h3>
+                        <p class="text-gray-300">We emphasize responsible tourism practices, ensuring minimal environmental impact while maximizing wildlife encounters.</p>
+                    </div>
+                    
+                    <div class="glass-effect p-6 rounded-2xl scale-on-hover">
+                        <h3 class="text-2xl font-bold text-blue-400 mb-3">📸 Customized Experiences</h3>
+                        <p class="text-gray-300">Tailored safaris for photographers, families, and nature enthusiasts with flexible timing and specialized focuses.</p>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="nature-gradient w-full h-96 rounded-3xl flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-8xl mb-4">🦏</div>
+                            <h3 class="text-3xl font-bold mb-2">30,800 Hectares</h3>
+                            <p class="text-xl opacity-90">of pristine wilderness</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">Safari Packages</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Choose from our carefully crafted safari experiences designed for every type of wildlife enthusiast
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Morning Safari -->
+                <div class="glass-effect p-8 rounded-3xl scale-on-hover glow-on-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🌅</div>
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-2">Morning Safari</h3>
+                        <p class="text-gray-300">5:30 AM - 9:00 AM</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            Best for birdwatching
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            Active elephant hours
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            Golden hour photography
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            Cooler temperatures
+                        </li>
+                    </ul>
+                    <button class="w-full bg-yellow-600 hover:bg-yellow-700 py-3 rounded-full font-semibold transition-all">
+                        Book Morning Safari
+                    </button>
+                </div>
+                
+                <!-- Afternoon Safari -->
+                <div class="glass-effect p-8 rounded-3xl scale-on-hover glow-on-hover border-2 border-orange-500">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🌅</div>
+                        <h3 class="text-2xl font-bold text-orange-400 mb-2">Afternoon Safari</h3>
+                        <p class="text-gray-300">2:30 PM - 6:00 PM</p>
+                        <span class="inline-block bg-orange-500 text-white px-3 py-1 rounded-full text-sm mt-2">POPULAR</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            Elephant herds at waterholes
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            Sunset wildlife viewing
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            Dramatic lighting
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            Active animal behavior
+                        </li>
+                    </ul>
+                    <button class="w-full sunset-gradient py-3 rounded-full font-semibold transition-all">
+                        Book Afternoon Safari
+                    </button>
+                </div>
+                
+                <!-- Full Day Safari -->
+                <div class="glass-effect p-8 rounded-3xl scale-on-hover glow-on-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">🌞</div>
+                        <h3 class="text-2xl font-bold text-green-400 mb-2">Full Day Safari</h3>
+                        <p class="text-gray-300">5:30 AM - 6:00 PM</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            Complete park exploration
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            Meals included
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            Multiple wildlife encounters
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            Premium experience
+                        </li>
+                    </ul>
+                    <button class="w-full nature-gradient py-3 rounded-full font-semibold transition-all">
+                        Book Full Day Safari
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">Why Choose Kavi Safari?</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center glass-effect p-6 rounded-2xl scale-on-hover">
+                    <div class="text-4xl mb-4">🚗</div>
+                    <h3 class="text-xl font-bold text-green-400 mb-2">4x4 Open-Top Jeeps</h3>
+                    <p class="text-gray-300">Unobstructed wildlife viewing</p>
+                </div>
+                
+                <div class="text-center glass-effect p-6 rounded-2xl scale-on-hover">
+                    <div class="text-4xl mb-4">🌍</div>
+                    <h3 class="text-xl font-bold text-orange-400 mb-2">Local Expertise</h3>
+                    <p class="text-gray-300">Born and raised guides</p>
+                </div>
+                
+                <div class="text-center glass-effect p-6 rounded-2xl scale-on-hover">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-xl font-bold text-blue-400 mb-2">Competitive Pricing</h3>
+                    <p class="text-gray-300">Great value for money</p>
+                </div>
+                
+                <div class="text-center glass-effect p-6 rounded-2xl scale-on-hover">
+                    <div class="text-4xl mb-4">🔒</div>
+                    <h3 class="text-xl font-bold text-purple-400 mb-2">Safety First</h3>
+                    <p class="text-gray-300">Well-maintained vehicles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">Book Your Adventure</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Ready to experience the wild beauty of Sri Lanka? Contact us to book your unforgettable safari adventure
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="glass-effect p-8 rounded-3xl">
+                    <h3 class="text-2xl font-bold text-green-400 mb-6">Get in Touch</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-4">📞</span>
+                            <div>
+                                <p class="font-semibold">Phone & WhatsApp</p>
+                                <p class="text-gray-300">+94 XX XXX XXXX</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-4">📧</span>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <p class="text-gray-300">info@kavisafari.lk</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-4">📍</span>
+                            <div>
+                                <p class="font-semibold">Location</p>
+                                <p class="text-gray-300">Udawalawe, Sri Lanka</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-4">📱</span>
+                            <div>
+                                <p class="font-semibold">Social Media</p>
+                                <p class="text-gray-300">Facebook & Instagram</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-effect p-8 rounded-3xl">
+                    <h3 class="text-2xl font-bold text-orange-400 mb-6">Additional Services</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>Park entry ticketing</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>Airport & hotel transfers</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>Accommodation recommendations</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>Elephant Transit Home visits</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>Photography assistance</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>Camping arrangements</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-10">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h3 class="text-3xl font-bold gradient-text mb-4">KAVI SAFARI UDAWALAWA</h3>
+                <p class="text-gray-300 mb-6">Your journey into the soul of Sri Lanka's wild beauty</p>
+                <div class="flex justify-center space-x-6 text-2xl">
+                    <span class="hover:text-green-400 cursor-pointer transition-colors">🐘</span>
+                    <span class="hover:text-orange-400 cursor-pointer transition-colors">🦏</span>
+                    <span class="hover:text-blue-400 cursor-pointer transition-colors">🦅</span>
+                    <span class="hover:text-purple-400 cursor-pointer transition-colors">🐆</span>
+                </div>
+                <p class="text-gray-400 mt-6">&copy; 2024 Kavi Safari Udawalawa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.querySelector('nav .hidden');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('#home');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Dynamic text animation
+        const dynamicTexts = [
+            'Wildlife Adventure Awaits',
+            'Elephant Encounters',
+            'Nature Photography',
+            'Conservation Tourism',
+            'Authentic Experiences'
+        ];
+
+        let currentTextIndex = 0;
+        const heroTitle = document.querySelector('#home h1');
+
+        function changeHeroText() {
+            const text = dynamicTexts[currentTextIndex];
+            currentTextIndex = (currentTextIndex + 1) % dynamicTexts.length;
+            
+            setTimeout(() => {
+                heroTitle.innerHTML = `
+                    <span class="gradient-text">${text.split(' ')[0]}</span><br>
+                    <span class="text-white">${text.split(' ')[1] || ''}</span><br>
+                    <span class="text-orange-400">${text.split(' ')[2] || ''}</span>
+                `;
+            }, 5000);
+        }
+
+        // Change text every 8 seconds
+        setInterval(changeHeroText, 8000);
+
+        // Add hover effects to cards
+        document.querySelectorAll('.scale-on-hover').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'scale(1.05) translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1) translateY(0)';
+            });
+        });
+
+        // Booking button interactions
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', () => {
+                button.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    button.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
